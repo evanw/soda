@@ -1,5 +1,7 @@
 # Soda
 
+Currently hosted at: http://madebyevan.com/soda/app/
+
 Soda is a replacement course browser for Brown University. The system at Brown is called Banner and has a terrible search interface. There is essentially a widget for every field in the course database. Besides being cumbersome, the system is also slow and mistakes cost the user time as the request bounces back from the server. This delay is especially bad around the start of the semester when all students at Brown are using the system to schedule their courses.
 
 Soda fixes all this. The entire list of current courses is downloaded to the browser once at page load time, after which the entire app runs client-side. While this is a higher initial load, the common usage pattern is relatively long periods of scheduling where a client-side app like Soda actually saves in data transfer. In addition, the entire list of courses can be gzipped and cached by the browser, so the actual data transfer overhead isn't bad at all.
