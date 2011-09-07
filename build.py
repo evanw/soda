@@ -3,10 +3,11 @@
 input_path = 'src/'
 output_path = 'www/soda.js'
 
-import os, sys, time
+import re, os, sys, time, tempfile
 
-license = '''/*
+header = '''/*
 Copyright (C) 2011 Evan Wallace
+Source code: https://github.com/evanw/soda
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -23,17 +24,28 @@ this program. If not, see http://www.gnu.org/licenses/.
 
 '''
 
-def compile(sources):
-    return license + '\n'.join(open(f).read() for f in sources)
-
 def sources():
     return [os.path.join(base, f) for base, folders, files in \
         os.walk(input_path) for f in files if f.endswith('.js')]
 
+def compile(sources):
+    return '\n'.join('// %s\n%s' % (path, open(path).read()) for path in sources)
+
 def build():
     data = compile(sources())
-    print 'built %s (%u lines)' % (output_path, len(data.split('\n')))
+    if 'release' in sys.argv:
+        f1, temp1_path = tempfile.mkstemp()
+        f2, temp2_path = tempfile.mkstemp()
+        os.write(f1, data)
+        os.close(f1)
+        os.close(f2)
+        os.system('java -jar courses/compiler.jar --js %s --js_output_file %s' % (temp1_path, temp2_path))
+        os.remove(temp1_path)
+        data = open(temp2_path).read()
+        os.remove(temp2_path)
+    data = header + data
     open(output_path, 'w').write(data)
+    print 'built %s (%u lines)' % (output_path, len(data.split('\n')))
 
 def stat():
     return [os.stat(file).st_mtime for file in sources()]
@@ -49,5 +61,5 @@ def monitor():
 
 if __name__ == '__main__':
     build()
-    if 'release' not in sys.argv:
+    if 'debug' in sys.argv:
         monitor()
