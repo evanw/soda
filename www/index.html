@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Soda</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="jquery.color.js"></script>
+</head><body>
+  <div id="background"><div></div></div>
+
+  <div id="topbar"><div id="bar">
+    <div id="tri-line"></div>
+    <div id="tri-fill"></div>
+    <table><tr>
+      <td><div id="prompt">Search&nbsp;for&nbsp;</div></td>
+      <td width="100%"><input type="text" id="search" /></td>
+    </tr></table>
+    <a id="options-button">Options</a>
+  </div><div id="options"><div>
+    <a id="options-close">Close</a>
+    <table><tr>
+      <td>
+        <b>Search in:</b>
+        <br><input type="checkbox" checked="true" id="search-desc" /> <label for="search-desc">Course descriptions</label>
+        <br><input type="checkbox" checked="true" id="search-sect" /> <label for="search-sect">Section descriptions</label>
+      </td>
+      <td class="spacer"></td>
+      <td>
+        <b>Result format:</b>
+        <br><input type="radio" name="result-format" id="result-sm" /> <label for="result-sm">Just title</label>
+        <br><input type="radio" name="result-format" id="result-med" /> <label for="result-med">Title and description</label>
+        <br><input type="radio" name="result-format" checked="true" id="result-big" /> <label for="result-big">Everything</label>
+      </td>
+      <td class="spacer"></td>
+      <td>
+        <b>Other:</b>
+        <br><input type="checkbox" id="show-links" /> <label for="show-links">Show links (like Critical Review)</label>
+        <br><input type="checkbox" checked="true" id="collapse-sim" /> <label for="collapse-sim">Collapse five or more similar sections</label>
+        <br><input type="checkbox" checked="true" id="hide-no-sections" /> <label for="hide-no-sections">Hide courses without sections</label>
+      </td>
+    </tr></table>
+  </div></div></div>
+
+  <div id="sidebar"><div>
+    <div id="cart-section"><div id="cart"></div></div>
+    <div id="schedule-section"><div id="hours"></div><div id="schedule"></div></div>
+    <div id="semesters"></div>
+  </div></div>
+
+  <div id="options-spacer"></div>
+
+  <div id="content">
+    <h1>Soda</h1>
+    <p id="tagline">A course browser for Brown University</p>
+    <script type="text/javascript">document.write('<p id="loading">Loading...</p>');</script>
+    <noscript><p id="loading">Soda needs JavaScript to work. Please enable JavaScript and click refresh.</p></noscript>
+  </div>
+
+  <script type="text/javascript" src="courses.js"></script>
+  <script type="text/javascript" src="soda.js"></script>
+</body></html>

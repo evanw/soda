@@ -1,0 +1,482 @@
+/* General */
+
+body {
+  color: black;
+  max-width: 799px;
+  padding: 41px 301px 0 0;
+  background: #DFDFDF;
+}
+
+body, input {
+  margin: 0;
+  font: 11px/14px Tahoma, Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 0;
+  vertical-align: top;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  outline: none !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: square;
+}
+
+/* Search Bar */
+
+#topbar {
+  cursor: default;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 2;
+}
+
+#bar {
+  position: relative;
+  margin-right: 290px;
+  max-width: 732px;
+  height: 31px;
+  z-index: 3;
+
+  padding: 9px 67px 0 10px;
+  color: #7F3F00;
+  background: #FFEF3F;
+  background: -moz-linear-gradient(#FFEF3F, #FFBF00);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFEF3F), to(#FFBF00));
+  border-right: 1px solid #BF5F00;
+  border-bottom: 1px solid #BF5F00;
+}
+
+#prompt {
+  line-height: 22px;
+}
+
+#tri-line {
+  position: absolute;
+  top: 41px;
+  right: 0;
+
+  color: #7F3F00;
+  border-left: 9px solid #BF5F00;
+  border-bottom: 9px solid rgba(0,0,0,0);
+}
+
+#tri-fill {
+  position: absolute;
+  top: 41px;
+  right: 1px;
+
+  color: #7F3F00;
+  border-left: 8px solid #FFBF00;
+  border-bottom: 8px solid rgba(0,0,0,0);
+}
+
+#search {
+  width: 100%;
+  padding: 3px;
+  height: 14px;
+  color: black;
+  background: white;
+  outline: none !important;
+  border: 1px solid #BF5F00;
+}
+
+#options-button {
+  display: block;
+  text-decoration: none !important;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  text-align: right;
+  padding-right: 6px;
+  width: 44px;
+  height: 20px;
+  line-height: 20px;
+  border-top: 1px solid #BF5F00;
+  border-right: 1px solid #BF5F00;
+  border-bottom: 1px solid #BF5F00;
+  background: white;
+}
+
+#options-button:hover {
+  width: 43px;
+  border-left: 1px solid #BF5F00;
+  background: #FFFB9F;
+  background: -moz-linear-gradient(#FFF7BF, #FFEF7F);
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF7BF), to(#FFEF7F));
+}
+
+#options-button:active {
+  width: 43px;
+  border-left: 1px solid #BF5F00;
+  background: none;
+}
+
+#options {
+  position: relative;
+  margin: -1px 301px 0 0;
+  max-width: 769px;
+  background: #FFFFDF;
+  border-bottom: 1px solid #7F7F7F;
+}
+
+#options, #options-spacer {
+  height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+#options-close {
+  float: right;
+}
+
+#options input {
+  margin-top: 5px;
+}
+
+#options .spacer {
+  width: 20px;
+}
+
+/* Cart, Semesters, and Schedule */
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  direction: rtl;
+}
+
+#sidebar > div {
+  position: relative;
+  direction: ltr;
+  margin-left: 800px;
+  min-width: 300px;
+  height: 100%;
+  color: #7F7F7F;
+}
+
+#cart-section {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 60%;
+}
+
+#semesters {
+  cursor: default;
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#semesters b {
+  color: #3F3F3F;
+}
+
+#semesters .semester {
+  position: relative;
+  display: inline-block;
+}
+
+#semesters .notification {
+  position: absolute;
+  top: -11px;
+  right: -5px;
+  display: block;
+  width: 18px;
+  height: 20px;
+  text-align: center;
+  line-height: 16px;
+  background: url(notify.png) no-repeat;
+  color: white;
+  z-index: 10;
+}
+
+#schedule-section table {
+  width: 100%;
+  height: 100%;
+}
+
+#schedule-section {
+  position: absolute;
+  top: 40%;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  padding-top: 5px;
+}
+
+#cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+#hours {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  color: #5F5F5F;
+  background: #CFCFCF;
+  border: 1px solid #7F7F7F;
+}
+
+#schedule {
+  cursor: default;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+}
+
+#cart, #schedule {
+  color: black;
+  background: white;
+  border: 1px solid #7F7F7F;
+}
+
+.cart-course {
+  cursor: pointer;
+  background: #FFFFFF;
+  padding: 5px 10px 5px 35px;
+  margin-top: -1px;
+  border-top: 1px solid #DFDFDF;
+  border-bottom: 1px solid #DFDFDF;
+}
+
+.cart-course:hover {
+  z-index: 1;
+  position: relative;
+  background: #EFEFEF !important;
+  border-color: #BFBFBF !important;
+}
+
+.cart-course .color {
+  float: left;
+  width: 13px;
+  height: 13px;
+  border: 1px solid black;
+  margin: 6px 0 0 -25px;
+}
+
+.cart-course .section {
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+.cart-course .section div {
+  float: right;
+  margin-left: 20px;
+}
+
+#cart .info {
+  text-align: center;
+  padding: 10px 15px;
+  color: #7F7F7F;
+}
+
+#hours td {
+  padding: 2px 4px 0 0;
+  text-align: right;
+}
+
+#hours tr + tr td {
+  border-top: 1px solid #7F7F7F;
+}
+
+#schedule td {
+  padding: 2px 4px 0 0; /* Opera needs the same padding to line up with the hours */
+  width: 1000px; /* large width makes each column the same width, go figure */
+  background: white;
+}
+
+#schedule td.weekend {
+  background: #F3F3F3;
+}
+
+#schedule td + td {
+  border-left: 1px solid #CFCFCF;
+}
+
+#schedule tr + tr td {
+  border-top: 1px solid #CFCFCF;
+}
+
+.block {
+  padding: 2px 0 0 4px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  font-size: 9px;
+  line-height: 10px;
+}
+
+.color0, .color7, .color14 { background: #FFBF7F; }
+.color1, .color8, .color15 { background: #FFFF7F; }
+.color2, .color9, .color16 { background: #BFFF7F; }
+.color3, .color10, .color17 { background: #9FCFFF; }
+.color4, .color11, .color18 { background: #BF7FFF; }
+.color5, .color12, .color19 { background: #FF9FCF; }
+.color6, .color13, .color20 { background: #BFBFBF; }
+
+.color7, .color8, .color9, .color10, .color11, .color12, .color13 { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAgMAAAC5YVYYAAAACVBMVEX///////////+OSuX+AAAAAnRSTlMAf7YpoZUAAAAgSURBVAgdY5CawJDlwLCSkWEJG8MEKQaHLAbGlQxsSwA/2AVRXmuaTQAAAABJRU5ErkJggg==); }
+.color14, .color15, .color16, .color17, .color18, .color19, .color20 { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAK0lEQVQYGWP8DwQMmIARKvSfCVMOVYQOCliANsIchGo5hMdI0A0gE/B6EwAjGgcRNPWciAAAAABJRU5ErkJggg==); }
+
+/* Background */
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#background div {
+  margin-right: 300px;
+  max-width: 799px;
+  height: 100%;
+
+  background: white;
+  border-right: 1px solid #7F7F7F;
+}
+
+/* Contents */
+
+#content {
+  position: relative;
+  z-index: 1;
+}
+
+#tagline {
+  margin: 0 15px 25px 15px;
+  text-align: center;
+}
+
+#loading {
+  text-align: center;
+}
+
+#footer {
+  margin: 15px 15px 60px 15px;
+  color: #7F7F7F;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  padding: 40px 15px 0 15px;
+  font: bold 50px "Century Gothic", Futura, Arial, sans-serif;
+}
+
+.course {
+  text-decoration: none !important;
+  display: block;
+  position: relative;
+  padding: 5px 0;
+  border-bottom: 1px solid #BFBFBF;
+}
+
+a.course:hover {
+  background: #FFFFDF;
+}
+
+h2, h3, p {
+  margin: 10px 15px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h2, h3 {
+  font: bold 16px/18px Arial, sans-serif;
+}
+
+h4 {
+  margin: 0 15px;
+  font: inherit;
+}
+
+h4 b {
+  display: inline-block;
+  width: 75px;
+}
+
+.match {
+  background: #FFFFBF;
+}
+
+a.course:hover .match {
+  background: #FFE78F;
+}
+
+.example {
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.example:hover:after {
+  content: ' (try it out)';
+  font-weight: normal;
+}
+
+.course .semester {
+  text-align: right;
+  font-weight: bold;
+  border-right: 1px solid #BFBFBF;
+  padding: 0 10px 0 15px;
+  white-space: nowrap;
+}
+
+.course a {
+  text-decoration: underline;
+}
+
+.course .xlist {
+  display: block;
+  padding: 0 15px 0 10px;
+}
+
+.course .section {
+  display: block;
+  padding: 0 15px 0 25px;
+  text-indent: -15px;
+}
+
+.course .spacer {
+  line-height: 10px;
+}
